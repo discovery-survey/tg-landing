@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Google tag (gtag.js) — GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SB9TCKZ6KF"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-SB9TCKZ6KF');   // GA4 Analytics
+</script>
+
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+<meta name="googlebot" content="noindex, nofollow">
+<meta name="robots" content="noai, noimageai">
+<title>Заберіть винагороду — Dive &amp; Discovery Research</title>
+
+<!-- Social share preview (Open Graph / Twitter) -->
+<!-- TODO: replace the domain below with your real published URL for the image to show in messengers -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="uk_UA">
+<meta property="og:site_name" content="Discovery Research">
+<meta property="og:title" content="Заберіть винагороду — Discovery Research">
+<meta property="og:description" content="Ваша винагорода за опитування вже чекає. Заберіть її в Telegram-боті та приєднуйтеся до спільноти Discovery Research.">
+<meta property="og:image" content="https://bot.discovery-survey.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Заберіть винагороду — Discovery Research">
+<meta name="twitter:description" content="Ваша винагорода за опитування вже чекає. Заберіть її в Telegram-боті.">
+<meta name="twitter:image" content="https://bot.discovery-survey.com/og-image.png">
+
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#7A76DC">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="glow a"></div>
+  <div class="glow b"></div>
+
+  <main class="card">
+    <div class="head">
+      <img src="logo.png" alt="Discovery Research">
+      <span class="badge">Опитування завершено ✓</span>
+    </div>
+
+    <div class="hero">
+      <span class="eyebrow"><span class="dot" aria-hidden="true"></span>Дякуємо за вашу думку</span>
+      <div class="tada" aria-hidden="true">🎉</div>
+      <h1>Ваша винагорода вже чекає на вас</h1>
+      <p class="lede">Заберіть її в <b>Telegram-боті</b> та приєднуйтеся до спільноти <b>Discovery Research</b>.</p>
+    </div>
+
+    <div class="list">
+      <div class="row"><span class="em" aria-hidden="true">📩</span><span class="t">Отримуйте запрошення до нових опитувань</span></div>
+      <div class="row"><span class="em" aria-hidden="true">🎁</span><span class="t">Гарантовані винагороди за участь в опитуваннях</span></div>
+      <div class="row"><span class="em" aria-hidden="true">📢</span><span class="t">Спільнота, де ми ділимося результатами досліджень, цікавими фактами та новинами</span></div>
+    </div>
+
+    <div class="bonuses">
+      <div class="bonus">
+        <div class="amt">+5<span class="s">★</span></div>
+        <div class="lbl"><b>За профіль</b>перше заповнення</div>
+      </div>
+      <div class="bonus">
+        <div class="amt">+15<span class="s">★</span></div>
+        <div class="lbl"><b>За друга</b>15 грн на мобільний</div>
+      </div>
+    </div>
+
+    <div class="cta-wrap">
+      <a href="https://telegram.me/Discovery_survey_bot" class="cta" id="ctaTelegram">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M21.9 4.3l-3.2 15.1c-.24 1.06-.87 1.32-1.76.82l-4.87-3.59-2.35 2.26c-.26.26-.48.48-.98.48l.35-4.95L18.05 5.3c.4-.35-.09-.55-.62-.2L6.31 12.02l-4.86-1.52c-1.06-.33-1.08-1.06.22-1.57l19-7.32c.88-.33 1.65.2 1.36 1.62z"/></svg>
+        Перейти до Telegram-бота
+      </a>
+      <p class="reassure">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true" focusable="false"><path d="M20 6L9 17l-5-5"/></svg>
+        Гарантована винагорода за кожну участь
+      </p>
+    </div>
+
+    <p class="foot">Discovery Research · <a href="mailto:info@diveanddiscovery-research.com">info@diveanddiscovery-research.com</a></p>
+  </main>
+
+  <!-- CTA click tracking: GA4 event -->
+  <script>
+    (function () {
+      var TELEGRAM_URL = 'https://telegram.me/Discovery_survey_bot';
+
+      var cta = document.getElementById('ctaTelegram');
+      if (!cta) return;
+
+      cta.addEventListener('click', function (e) {
+        // Let new-tab / middle / modifier clicks behave normally.
+        if (e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+        e.preventDefault();
+
+        var navigated = false;
+        function go() {
+          if (navigated) return;
+          navigated = true;
+          window.location.href = TELEGRAM_URL;
+        }
+
+        if (typeof gtag === 'function') {
+          gtag('event', 'telegram_cta_click', {   // GA4 engagement event
+            event_category: 'engagement',
+            event_label: 'Перейти до Telegram-бота',
+            event_callback: go,
+            event_timeout: 800
+          });
+        }
+
+        // Always navigate, even if gtag is blocked or the callback is slow.
+        setTimeout(go, 800);
+      });
+    })();
+  </script>
+</body>
+</html>

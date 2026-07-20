@@ -1,0 +1,130 @@
+:root{
+  --violet:#7A76DC;
+  --violet-deep:#4F4BB0;
+  --violet-ink:#2B2960;
+  --ink:#1B1A2E;
+  --paper:#F5F4FF;
+  --paper-2:#ECEAFF;
+  --white:#FFFFFF;
+  --star:#FFC24B;
+  --line:rgba(122,118,220,.16);
+  --shadow:0 22px 55px -30px rgba(79,75,176,.55);
+  --radius:22px;
+  --radius-md:16px;
+  --radius-sm:14px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:'Geist',system-ui,sans-serif;color:var(--ink);
+  background:var(--paper);line-height:1.5;-webkit-font-smoothing:antialiased;
+  min-height:100vh;display:flex;align-items:center;justify-content:center;
+  padding:24px 16px;overflow-x:hidden;position:relative;
+}
+.glow{position:fixed;border-radius:50%;filter:blur(72px);opacity:.5;z-index:0;pointer-events:none}
+.glow.a{width:380px;height:380px;background:#B9B6FF;top:-150px;right:-110px}
+.glow.b{width:320px;height:320px;background:#D9D6FF;bottom:-160px;left:-120px}
+
+.card{
+  position:relative;z-index:2;width:min(560px,100%);
+  background:var(--white);border:1px solid var(--line);
+  box-shadow:var(--shadow);overflow:hidden;border-radius:var(--radius);
+  animation:cardIn .55s cubic-bezier(.2,.7,.2,1) both;
+}
+@keyframes cardIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+
+/* ---- light header (logo on white, like first version) ---- */
+.head{
+  padding:22px 34px;border-bottom:1px solid var(--line);
+  display:flex;align-items:center;justify-content:space-between;gap:14px;
+  background:rgba(245,244,255,.6);
+}
+.head img{height:40px;width:auto;display:block}
+.head .badge{
+  font-size:12.5px;font-weight:600;color:var(--violet-deep);
+  background:var(--paper-2);border:1px solid var(--line);
+  padding:6px 13px;white-space:nowrap;border-radius:999px;
+}
+
+/* ---- hero (light) ---- */
+.hero{padding:30px 34px 8px;position:relative}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:12px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--violet-deep);margin-bottom:14px;
+}
+.eyebrow .dot{width:7px;height:7px;border-radius:50%;background:var(--violet);
+  box-shadow:0 0 0 4px rgba(122,118,220,.18)}
+.hero .tada{font-size:30px;line-height:1;margin-bottom:6px;
+  width:fit-content;transform-origin:20% 70%;animation:pop .6s .25s both}
+@keyframes pop{0%{opacity:0;transform:scale(.4) rotate(-12deg)}
+  60%{opacity:1;transform:scale(1.15) rotate(6deg)}100%{transform:scale(1) rotate(0)}}
+h1{
+  font-family:'Geist';font-weight:800;font-size:clamp(24px,5vw,32px);
+  line-height:1.12;color:var(--violet-ink);letter-spacing:-.02em;
+}
+.lede{margin-top:12px;font-size:15px;color:#454367}
+.lede b{color:var(--violet-deep);font-weight:600}
+
+/* ---- benefit list ---- */
+.list{padding:20px 34px 4px;display:flex;flex-direction:column;gap:11px}
+.row{display:flex;gap:13px;align-items:flex-start}
+.row .em{font-size:19px;line-height:1.35;flex-shrink:0;width:24px;text-align:center}
+.row .t{font-size:14.5px;color:#3d3b5c;line-height:1.4}
+.row .t b{color:var(--violet-deep);font-weight:700}
+.star{color:var(--star)}
+
+/* ---- two equal bonus chips (secondary emphasis) ---- */
+.bonuses{margin:16px 34px 0;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.bonus{
+  background:var(--paper-2);border:1px solid rgba(122,118,220,.28);
+  padding:14px 16px;display:flex;align-items:center;gap:12px;
+  border-radius:var(--radius-sm);
+}
+.bonus .amt{
+  font-family:'Geist';font-weight:800;font-size:26px;line-height:1;
+  color:var(--violet-deep);flex-shrink:0;white-space:nowrap;
+}
+.bonus .amt .s{color:var(--star)}
+.bonus .lbl{font-size:12.5px;color:#54526f;line-height:1.3}
+.bonus .lbl b{color:var(--violet-ink);font-weight:700;display:block}
+
+/* ---- CTA (primary emphasis) ---- */
+.cta-wrap{padding:22px 34px 26px}
+.cta{
+  display:flex;align-items:center;justify-content:center;gap:12px;width:100%;
+  font-family:'Geist';font-weight:800;font-size:19px;letter-spacing:-.01em;color:#fff;
+  text-decoration:none;text-align:center;
+  background:var(--violet);border:none;padding:21px 24px;cursor:pointer;
+  border-radius:var(--radius-md);
+  box-shadow:0 20px 42px -16px rgba(79,75,176,.9);
+  transition:transform .18s ease,box-shadow .18s ease,background .18s ease;
+}
+.cta:hover{transform:translateY(-2px);background:var(--violet-deep);
+  box-shadow:0 28px 58px -18px rgba(79,75,176,.95)}
+.cta:active{transform:translateY(0) scale(.985);
+  box-shadow:0 10px 24px -14px rgba(79,75,176,.9)}
+.cta:focus-visible{outline:3px solid var(--violet-ink);outline-offset:3px}
+.cta svg{width:24px;height:24px;flex-shrink:0}
+.reassure{margin-top:12px;font-size:13px;color:#5c5b74;display:flex;
+  align-items:center;justify-content:center;gap:8px}
+.reassure svg{width:15px;height:15px;color:var(--violet)}
+
+/* ---- footer ---- */
+.foot{padding:14px 34px;border-top:1px solid var(--line);
+  text-align:center;font-size:12.5px;color:#66647e;background:rgba(245,244,255,.6)}
+.foot a{color:var(--violet-deep);text-decoration:none;font-weight:600}
+.foot a:hover{color:var(--violet)}
+.foot a:focus-visible{outline:2px solid var(--violet);outline-offset:2px;border-radius:4px}
+
+@media (max-width:440px){
+  .head,.hero,.list,.cta-wrap,.foot{padding-left:22px;padding-right:22px}
+  .bonuses{margin-left:22px;margin-right:22px;grid-template-columns:1fr}
+  .head .badge{display:none}
+  .cta{font-size:17px;padding:19px 16px;gap:10px}
+}
+
+/* Respect users who prefer less motion */
+@media (prefers-reduced-motion:reduce){
+  .card,.hero .tada{animation:none}
+  .cta{transition:none}
+}
