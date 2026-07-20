@@ -93,10 +93,21 @@
   <!-- CTA click tracking: GA4 event -->
   <script>
     (function () {
-      var TELEGRAM_URL = 'https://telegram.me/Discovery_survey_bot';
+      let TELEGRAM_URL = 'https://telegram.me/Discovery_survey_bot';
+
+      // Forward a non-empty ?start=<value> from the landing URL to the bot link.
+      try {
+        let start = new URLSearchParams(window.location.search).get('start');
+        if (start) {
+          TELEGRAM_URL += '?start=' + encodeURIComponent(start);
+        }
+      } catch (err) { console.error(err); }
 
       var cta = document.getElementById('ctaTelegram');
       if (!cta) return;
+
+      // Keep the visible href in sync so right-click / open-in-new-tab also carry ?start.
+      cta.setAttribute('href', TELEGRAM_URL);
 
       cta.addEventListener('click', function (e) {
         // Let new-tab / middle / modifier clicks behave normally.
